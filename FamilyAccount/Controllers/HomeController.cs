@@ -13,6 +13,11 @@ namespace FamilyAccount.Controllers
             return View();
         }
 
+        public ActionResult LightBox()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
