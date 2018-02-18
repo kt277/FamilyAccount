@@ -9772,6 +9772,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Template\TempLightBox.cshtml" />
     <Content Include="Views\Home\LightBox.cshtml" />
+    <Content Include="Views\Home\PhotoGallery.cshtml" />
+    <Content Include="Views\Template\TempPhtotGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
