@@ -1291,6 +1291,15 @@
     <Content Include="assets\js\helpers\hs.shortcode-filter.js" />
     <Content Include="assets\js\hs.core.js" />
     <Content Include="assets\js\_js-classes.txt" />
+    <Content Include="assets\layer\layer.js" />
+    <Content Include="assets\layer\mobile\layer.js" />
+    <Content Include="assets\layer\mobile\need\layer.css" />
+    <Content Include="assets\layer\theme\default\icon-ext.png" />
+    <Content Include="assets\layer\theme\default\icon.png" />
+    <Content Include="assets\layer\theme\default\layer.css" />
+    <Content Include="assets\layer\theme\default\loading-0.gif" />
+    <Content Include="assets\layer\theme\default\loading-1.gif" />
+    <Content Include="assets\layer\theme\default\loading-2.gif" />
     <Content Include="assets\media-temp\audio-bg\tiesto.mp3" />
     <Content Include="assets\media-temp\video-bg\video-bg-poster.jpg" />
     <Content Include="assets\media-temp\video-bg\video-bg.mp4" />
@@ -9775,6 +9784,9 @@
     <Content Include="Views\Home\PhotoGallery.cshtml" />
     <Content Include="Views\Template\TempPhtotGallery.cshtml" />
     <Content Include="Views\Template\TempHwLayer.cshtml" />
+    <Content Include="Views\Template\TempLayer.cshtml" />
+    <Content Include="Views\Template\TempPopup.cshtml" />
+    <Content Include="Views\Home\Popup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

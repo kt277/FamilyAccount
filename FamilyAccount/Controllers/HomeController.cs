@@ -23,6 +23,11 @@ namespace FamilyAccount.Controllers
             return View();
         }
 
+        public ActionResult Popup()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

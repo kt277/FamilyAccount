@@ -1,11 +1,17 @@
-﻿<script type="text/javascript">
-    function div_open(flg1) {
-        $('#loadingDiv' + flg1).css('display', 'block');
-    }
-    function div_close(flg2) {
-        $('#loadingDiv' + flg2).css('display', 'none');
-    }
+﻿<script src="~/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="~/assets/layer/layer.js"></script>
+
+<script>
+    function poplayer() {
+        var KeyID = 1;
+    layer.open({
+        type: 2,
+        content: ['/Home/Popup' + '?KeyID' + KeyID, 'no'],
+        area: ['900px', '600px']
+        });
+}
 </script>
+
 <div class="row">
     @{
         int flg1 = 0;
@@ -28,7 +34,7 @@
                         </div>
                     </div>
                     <!-- End Article Content -->
-                    <open><a class="u-link-v2" href="javascript:void(0)" onclick="div_open(@(flg1))"></a></open>
+                    <open><a class="u-link-v2" href="javascript:void(0)" onclick="poplayer();"></a></open>
                 </article>
                 <!-- End Article Content -->
             </div>
@@ -36,39 +42,3 @@
         }
     }
 </div>
-@{
-    int flg2 = 0;
-    for (int ii = 0; ii <= 1; ii++)
-    {
-        <div id="loadingDiv@(flg2)" style="position:fixed;display:none;z-index:2000;top:0px;left:0px;width:100%;height:100%;background-color:rgba(128,128,128,0.7)">
-            <div class="text-right"><close class="g-mr-20 g-mt-20 fa fa-close"><a href="javascript:void(0)" onclick="div_close(@(flg2))">Close</a></close></div>
-            <div class="col-md-6 g-mb-30 offset-3 g-py-10 g-bg-white">
-                @{
-                    <div id="carousel-08-1-@(flg2)" class="js-carousel text-center g-mb-20" data-infinite="true" data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-35 g-height-40 g-font-size-18 g-color-gray g-bg-white g-mt-minus-10" data-arrow-left-classes="fa fa-angle-left g-left-0" data-arrow-right-classes="fa fa-angle-right g-right-0" data-nav-for="#carousel-08-2-@(flg2)">
-                        @{
-                            for (int xx = 0; xx < 5; xx++)
-                            {
-                                <div class="js-slide">
-                                    <a class="js-fancybox d-block g-pos-rel" data-fancybox="lightbox-gallery--08-1" data-src="/assets/img-temp/700x350/img1.jpg" data-caption="Lightbox Gallery" data-animate-in="bounceInDown" data-animate-out="bounceOutDown" data-speed="1000" data-overlay-blur-bg="true">
-                                        <img class="img-fluid" src="~/assets/img-temp/700x350/img1.jpg" alt="Image Description">
-                                    </a>
-                                </div>
-                            }
-                        }
-                    </div>
-                    <div id="carousel-08-2-@(flg2)" class="js-carousel text-center g-mx-minus-10 u-carousel-v3 g-mb-20" data-infinite="true" data-center-mode="true" data-slides-show="4" data-is-thumbs="true" data-nav-for="#carousel-08-1-@(flg2)">
-                        @{
-                            for (int yy = 0; yy < 5; yy++)
-                            {
-                                <div class="js-slide g-px-10">
-                                    <img class="img-fluid" src="~/assets/img-temp/100x100/img2.jpg" alt="Image Description">
-                                </div>
-                            }
-                        }
-                    </div>
-                }
-            </div>
-        </div>
-        flg2++;
-    }
-}
