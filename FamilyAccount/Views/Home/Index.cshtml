@@ -1,12 +1,36 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style>
+    .stylish-input-group .input-group-addon {
+        background: white !important;
+    }
+
+    .stylish-input-group .form-control {
+        border-right: 0;
+        box-shadow: 0 0 0;
+        border-color: #ccc;
+    }
+
+    .stylish-input-group button {
+        border: 0;
+        background: transparent;
+    }
+</style>
 <div class="row">
     <div class="col-2">
     </div>
     <div class="col-8">
         <p><a href="/Home/LightBox">LightBox</a></p>
         <p><a href="/Home/PhotoGallery">Gallery弹层问题</a></p>
+        <!-- Search Form -->
+        <div class="input-group stylish-input-group g-max-width-200">
+            <input id="txtSearch" class="form-control g-color-gray-dark-v4 g-placeholder-gray-dark-v3 g-rounded-left-50 g-px-20" type="text" placeholder="Search for..." onkeypress="Enter();">
+            <span class="btn input-group-addon g-rounded-right-50">
+                <a onclick="SearchResult();"><i class="icon-magnifier"></i></a>
+            </span>
+        </div>
+        <!-- End Search Form -->
     </div>
     <div class="col-2">
     </div>
