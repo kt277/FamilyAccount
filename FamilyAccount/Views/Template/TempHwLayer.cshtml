@@ -1,0 +1,99 @@
+﻿<div class="row main">
+    <div class="col-md-12">
+        <h2 class="top_title"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><a href="http://www.helloweba.com/view-blog-365.html">HTML5+CSS3+jQuery实现弹出层</a></h2>
+        <div class="optlist">
+            <a class="btn btn-info btn-lg show-layer" data-show-layer="hw-layer" role="button">点击弹出层</a>
+        </div>
+
+
+        <div class="hw-overlay" id="hw-layer">
+            <div class="hw-layer-wrap">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        @{
+                            int flg2 = 0;
+                            for (int ii = 0; ii <= 1; ii++)
+                            {
+                                <div class="col-md-6 g-mb-30 offset-3 g-py-10 g-bg-white">
+                                    @{
+                                        <div id="carousel-08-1-@(flg2)" class="js-carousel text-center g-mb-20" data-infinite="true" data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-35 g-height-40 g-font-size-18 g-color-gray g-bg-white g-mt-minus-10" data-arrow-left-classes="fa fa-angle-left g-left-0" data-arrow-right-classes="fa fa-angle-right g-right-0" data-nav-for="#carousel-08-2-@(flg2)">
+                                            @{
+                                                for (int xx = 0; xx < 5; xx++)
+                                                {
+                                                    <div class="js-slide">
+                                                        <a class="js-fancybox d-block g-pos-rel" data-fancybox="lightbox-gallery--08-1" data-src="/assets/img-temp/700x350/img1.jpg" data-caption="Lightbox Gallery" data-animate-in="bounceInDown" data-animate-out="bounceOutDown" data-speed="1000" data-overlay-blur-bg="true">
+                                                            <img class="img-fluid" src="~/assets/img-temp/700x350/img1.jpg" alt="Image Description">
+                                                        </a>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                        <div id="carousel-08-2-@(flg2)" class="js-carousel text-center g-mx-minus-10 u-carousel-v3 g-mb-20" data-infinite="true" data-center-mode="true" data-slides-show="4" data-is-thumbs="true" data-nav-for="#carousel-08-1-@(flg2)">
+                                            @{
+                                                for (int yy = 0; yy < 5; yy++)
+                                                {
+                                                    <div class="js-slide g-px-10">
+                                                        <img class="img-fluid" src="~/assets/img-temp/100x100/img2.jpg" alt="Image Description">
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                                flg2++;
+                            }
+                        }
+                        <button class="btn btn-success hwLayer-ok">确 定</button>
+                        <button class="btn btn-warning hwLayer-cancel">取 消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="~/assets/vendor/jquery/jquery.min.js"></script>
+<script>
+    $(function () {
+        //展示层
+        function showLayer(id) {
+            var layer = $('#' + id),
+                layerwrap = layer.find('.hw-layer-wrap');
+            layer.fadeIn();
+            //屏幕居中
+            layerwrap.css({
+                'margin-top': -layerwrap.outerHeight() / 2
+            });
+        }
+
+        //隐藏层
+        function hideLayer() {
+            $('.hw-overlay').fadeOut();
+        }
+
+        $('.hwLayer-ok,.hwLayer-cancel,.hwLayer-close').on('click', function () {
+            hideLayer();
+        });
+
+        //触发弹出层
+        $('.show-layer').on('click', function () {
+            var layerid = $(this).data('show-layer');
+            showLayer(layerid);
+        });
+
+        //点击或者触控弹出层外的半透明遮罩层，关闭弹出层
+        $('.hw-overlay').on('click', function (event) {
+            if (event.target == this) {
+                hideLayer();
+            }
+        });
+
+        //按ESC键关闭弹出层
+        $(document).keyup(function (event) {
+            if (event.keyCode == 27) {
+                hideLayer();
+            }
+        });
+    });
+</script>
+

@@ -9774,6 +9774,7 @@
     <Content Include="Views\Home\LightBox.cshtml" />
     <Content Include="Views\Home\PhotoGallery.cshtml" />
     <Content Include="Views\Template\TempPhtotGallery.cshtml" />
+    <Content Include="Views\Template\TempHwLayer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
