@@ -2,6 +2,10 @@
     ViewBag.Title = "Home Page";
 }
 <style>
+    .u-block-hover:hover .g-color-primary--hover,
+    .g-color-primary--hover:hover {
+        color: #72c02c !important;
+    }
     .stylish-input-group .input-group-addon {
         background: white !important;
     }
@@ -42,9 +46,49 @@
             <option value="Edit Profile">Edit Profile</option>
             <option value="Another Action">Another Action</option>
         </select>
-        <select id="txtTimeofEntry2" class="u-select-v2 g-color-gray-dark-v5 g-bg-white">
-            <option value=""></option>
-            <option value="aaa">aaa</option>
-            <option value="bbb">bbb</option>
+        <select class="js-custom-select w-100 u-select-v1 g-width-80 g-brd-left-none--md g-brd-gray-light-v3 g-color-main g-color-primary--hover g-pt-12 g-pb-13">
+                <option></option>
+                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="aaa">aaa</option>
+                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="bbb">bbb</option>
         </select>
     </div>
+</div>
+
+    <script src="~/assets/vendor/jquery/jquery-3.2.1.js"></script>
+    <!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#js-header'));
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+          event: 'hover',
+          pageContainer: $('.container'),
+          breakpoint: 991
+        });
+
+        // initialization of HSDropdown component
+        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+          afterOpen: function () {
+            $(this).find('input[type="search"]').focus();
+          }
+        });
+
+        // initialization of range slider
+        $.HSCore.components.HSSlider.init('#rangeSlider1');
+
+        // initialization of custom select
+        $.HSCore.components.HSSelect.init('.js-custom-select');
+
+        // initialization of carousel
+        $.HSCore.components.HSCarousel.init('[class*="js-carousel"]');
+
+        // initialization of popups
+        $.HSCore.components.HSPopup.init('.js-fancybox');
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+      });
+    </script>
