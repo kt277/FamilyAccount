@@ -21,6 +21,59 @@
         background: transparent;
     }
 </style>
+<script>
+    function Send_Mail() {
+        var Name = $.trim($("#txtName").val());
+        //var Tel = $.trim($("#txtTel").val());
+        //var Email = $.trim($("#txtEmail").val());
+        //var Message = $.trim($("#txtMessage").val());
+        //var ParmLang = $.trim($("#txtParmLang").val());
+        //var ParmKey = $.trim($("#txtParmKey").val());
+        //var ParmAction = "";
+        //var valContact = {
+        //    Name: Name,
+        //    Tel: Tel,
+        //    Email: Email,
+        //    Message: Message
+        //}
+        if (Name == "") {
+            alert(msg("E003"));
+            return;
+        }
+        return;
+        //$.ajax({
+        //    type: "POST",
+        //    url: "/Common/SetContactToEmail",
+        //    contentType: "application/json; charset=utf-8",
+        //    dataType: "json",
+        //    data: JSON.stringify(valContact, ParmLang),
+        //    error: function (XMLHttpRequest, textStatus, errorThrown) {
+        //        alert("网络繁忙,请稍后再试！");
+        //    },
+        //    success: function (data) {
+        //        if (data.Code == "1") {
+        //            alert(data.Message);
+        //            window.location.href = "/Feature/Contact" + ParmAction;
+        //        }
+        //        else {
+        //            alert(data.Message);
+        //        }
+        //    }
+        //});
+    }
+    function msg(MsgID) {
+        var ErrMsg = [
+                        ["E001", "name", "名字"],
+                        ["E002", "name2", "名字2"],
+                        ["E003", "name3", "名字3"]
+        ];
+        for (var i = 0; i < ErrMsg.length; i++){
+            if (MsgID == ErrMsg[i][0]) {
+                return ErrMsg[i][1];
+            }
+        }
+    }
+</script>
 <div class="row">
     <div class="col-4">
     </div>
@@ -35,6 +88,15 @@
             </span>
         </div>
         <!-- End Search Form -->
+        <div class="g-mb-20">
+            <label class="g-color-gray-dark-v5 g-font-weight-600 g-font-size-13">
+                name
+            </label>
+            <input id="txtName" class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-primary--focus g-brd-gray-light-v4 rounded-0 g-py-13 g-px-15" type="text" placeholder="name">
+        </div>
+        <div class="text-right">
+            <a class="btn btn-lg u-btn-primary g-color-white g-font-weight-600 g-font-size-default rounded-0" onclick="Send_Mail()">Send</a>
+        </div>
     </div>
     <div class="col-4">
         <select class="js-custom-select text-uppercase text-left u-select-v1 g-width-130 g-width-155--lg g-letter-spacing-1 g-font-weight-700 g-font-size-11 g-color-white g-rounded-50 g-py-10 g-py-12--md g-px-20 g-px-30--md g-mr-10 g-mr-20--lg"
