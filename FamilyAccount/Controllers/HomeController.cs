@@ -23,6 +23,11 @@ namespace FamilyAccount.Controllers
             return View();
         }
 
+        public ActionResult Language()
+        {
+            return View();
+        }
+
         public ActionResult Popup()
         {
             return View();

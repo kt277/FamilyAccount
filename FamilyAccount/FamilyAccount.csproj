@@ -9787,6 +9787,7 @@
     <Content Include="Views\Template\TempLayer.cshtml" />
     <Content Include="Views\Template\TempPopup.cshtml" />
     <Content Include="Views\Home\Popup.cshtml" />
+    <Content Include="Views\Home\Language.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
