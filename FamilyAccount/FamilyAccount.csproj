@@ -9121,6 +9121,7 @@
     <Content Include="Views\Template\TempPopup.cshtml" />
     <Content Include="Views\Home\Popup.cshtml" />
     <Content Include="Views\Home\Language.cshtml" />
+    <Content Include="Views\Home\VideoGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<style>
+@*<style>
     .u-block-hover:hover .g-color-primary--hover,
     .g-color-primary--hover:hover {
         color: #72c02c !important;
@@ -20,6 +20,19 @@
         border: 0;
         background: transparent;
     }
+</style>*@
+<style>
+    .inputAttr1 {
+        background: url("../images/user_icon.png")no-repeat 315px;
+        width: 350px;
+        height: 40px;
+        border-radius: 50px;
+        border: 1px solid #999999;
+        box-shadow: 1px 1px 3px #cccccc;
+        padding-left: 10px;
+        margin-right: 10px;
+    }
+
 </style>
 <script>
     function Send_Mail() {
@@ -81,6 +94,7 @@
         <p><a href="/Home/LightBox">LightBox</a></p>
         <p><a href="/Home/PhotoGallery">Gallery弹层问题</a></p>
         <p><a href="/Home/Language">多语言切换</a></p>
+        <p><a href="/Home/VideoGallery">视频弹层</a></p>
         <!-- Search Form -->
         <div class="input-group stylish-input-group g-max-width-200">
             <input id="txtSearch" class="form-control g-color-gray-dark-v4 g-placeholder-gray-dark-v3 g-rounded-left-50 g-px-20" type="text" placeholder="Search for...">
@@ -89,6 +103,9 @@
             </span>
         </div>
         <!-- End Search Form -->
+        <div>
+            <input type="text" class="inputAttr1" name="activityUserValue" for="reservation" placeholder="注册邮箱/用户名" />
+        </div>
         <div class="g-mb-20">
             <label class="g-color-gray-dark-v5 g-font-weight-600 g-font-size-13">
                 name

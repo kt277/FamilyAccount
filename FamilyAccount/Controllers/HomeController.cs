@@ -46,5 +46,10 @@ namespace FamilyAccount.Controllers
 
             return View();
         }
+
+        public ActionResult VideoGallery()
+        {
+            return View();
+        }
     }
 }
